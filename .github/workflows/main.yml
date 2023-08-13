@@ -28,7 +28,7 @@ jobs:
     
     - name: Run main solution
       run: |
-        dotnet run --project SeleniumTests --launch-profile http --configuration Release --no-build --no-restore & sleep 15
+        dotnet run --project SeleniumTests --configuration Release --no-build --no-restore & sleep 15
       working-directory: ./src
       
     - name: Install test solution dependencies
