@@ -28,7 +28,8 @@ jobs:
     
     - name: Run main solution
       run: |
-        dotnet run --project SeleniumTests --launch-profile https --configuration Release --no-build --no-restore
+        dotnet run --project SeleniumTests --launch-profile https --configuration Release --no-build --no-restore &
+        netstat -anb
       working-directory: ./src
       
     - name: Install test solution dependencies
