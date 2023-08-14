@@ -16,6 +16,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: tasklist0
+      shell: cmd
+      run: set RUNNER_TRACKING_ID && tasklist
+
     - name: start cmd /c
       shell: cmd
       run: set RUNNER_TRACKING_ID && set RUNNER_TRACKING_ID="" && set RUNNER_TRACKING_ID && tasklist && start cmd /c "set RUNNER_TRACKING_ID="" && ping 172.0.0.1 -n 2000 &" && tasklist
