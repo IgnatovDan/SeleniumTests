@@ -28,7 +28,6 @@ jobs:
     
     - name: Run main solution
       run: Start-Process -FilePath start.cmd
-      working-directory: ./src
 
     - name: Install test solution dependencies
       run: dotnet restore
