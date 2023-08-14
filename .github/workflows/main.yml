@@ -29,7 +29,9 @@ jobs:
     
     - name: Run main solution
       run: |
+        set RUNNER_TRACKING_ID
         RUNNER_TRACKING_ID=""
+        set RUNNER_TRACKING_ID
         START CMD /C CALL dotnet run --project SeleniumTests --launch-profile https --configuration Release --no-build --no-restore
       working-directory: ./src
 
