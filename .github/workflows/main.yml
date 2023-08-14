@@ -22,7 +22,7 @@ jobs:
 
     - name: start cmd /c
       shell: cmd
-      run: set RUNNER_TRACKING_ID && set RUNNER_TRACKING_ID=0 && set RUNNER_TRACKING_ID && tasklist && start cmd /c "set RUNNER_TRACKING_ID=0 && ping 172.0.0.1 -n 2000" && tasklist
+      run: set RUNNER_TRACKING_ID && tasklist && start cmd /c "set RUNNER_TRACKING_ID=0 && ping 172.0.0.1 -n 2000" && tasklist
 
     - name: tasklist2
       shell: cmd
