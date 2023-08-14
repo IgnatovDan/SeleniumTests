@@ -20,6 +20,7 @@ jobs:
       run: tasklist
 
     - name: start cmd /c pause
+      shell: cmd
       run: start cmd /c pause
 
     - name: tasklist2
