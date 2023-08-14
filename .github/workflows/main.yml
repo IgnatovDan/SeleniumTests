@@ -28,12 +28,9 @@ jobs:
     
     - name: Run main solution
       run: |
-        start /B dotnet run --project SeleniumTests --launch-profile https --configuration Release --no-build --no-restore &
+        start "" /B dotnet run --project SeleniumTests --launch-profile https --configuration Release --no-build --no-restore
       working-directory: ./src
       shell: cmd
-
-    - name: Test
-      run: Get-Job
 
     - name: Install test solution dependencies
       run: dotnet restore
