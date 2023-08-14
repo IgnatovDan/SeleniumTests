@@ -15,38 +15,13 @@ jobs:
                 
     steps:
     - uses: actions/checkout@v3
-    
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3
-      
-    - name: Install main solution dependencies
-      run: dotnet restore
-      working-directory: ./src
-      
-    - name: Build main solution
-      run: dotnet build --configuration Release --no-restore
-      working-directory: ./src
-    
-    - name: Run main solution
-      run: |
-        set RUNNER_TRACKING_ID
-        set RUNNER_TRACKING_ID=""
-        set RUNNER_TRACKING_ID
-        START CMD /C CALL dotnet run --project SeleniumTests --launch-profile https --configuration Release --no-build --no-restore
-      working-directory: ./src
 
-    - name: List tasks
+    - name: tasklist1
       run: tasklist
-      working-directory: ./tests/Functional
 
-    - name: Install test solution dependencies
-      run: dotnet restore
-      working-directory: ./tests/Functional
-      
-    - name: Build test solution
-      run: dotnet build --configuration Release --no-restore
-      working-directory: ./tests/Functional
+    - name: start cmd /c pause
+      run: start cmd /c pause
 
-    - name: Test
-      run: dotnet test --configuration Release --no-build --no-restore
-      working-directory: ./tests/Functional
+    - name: tasklist2
+      run: tasklist
+
