@@ -45,7 +45,7 @@ jobs:
       working-directory: ./tests/Functional
       
     - name: Wait for asp.net
-      run: sleep 15
+      run: sleep 120
       
     - name: Test
       run: dotnet test --configuration Release --no-build --no-restore
