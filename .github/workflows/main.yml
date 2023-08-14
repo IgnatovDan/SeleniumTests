@@ -17,12 +17,12 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: tasklist1
-      run: tasklist
+      run: set RUNNER_TRACKING_ID && tasklist
 
     - name: start cmd /c pause
       shell: cmd
-      run: start cmd /c pause
+      run: set RUNNER_TRACKING_ID && set RUNNER_TRACKING_ID="" && start cmd /c pause
 
     - name: tasklist2
-      run: tasklist
+      run: set RUNNER_TRACKING_ID && tasklist
 
