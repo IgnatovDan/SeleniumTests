@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-run-app:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v3
