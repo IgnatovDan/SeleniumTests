@@ -31,11 +31,6 @@ jobs:
         RUNNER_TRACKING_ID="" && dotnet run --project SeleniumTests --launch-profile https --configuration Release --no-build --no-restore &
       working-directory: ./src
 
-    - name: Test1
-      run: |
-        $j = Get-Job -Name Job1
-        $j
-        
     - name: Install test solution dependencies
       run: dotnet restore
       working-directory: ./tests/Functional
