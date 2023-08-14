@@ -10,7 +10,7 @@ jobs:
     
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [ubuntu-latest, windows-latest]
                 
     steps:
     - uses: actions/checkout@v3
@@ -26,8 +26,16 @@ jobs:
       run: dotnet build --configuration Release --no-restore
       working-directory: ./src
     
-    - name: Run main solution
+    - name: Run main solution ( windows )
       run: Start-Process -FilePath start.cmd
+      working-directory: ./github/workflows
+      if: matrix.os == 'windows-latest'
+
+    - name: Run main solution ( ubuntu )
+      run: |
+        dotnet run --project SeleniumTests --launch-profile https --configuration Release --no-build --no-restore &
+      working-directory: ./src
+      if: matrix.os == 'ubuntu-latest'
 
     - name: Install test solution dependencies
       run: dotnet restore
