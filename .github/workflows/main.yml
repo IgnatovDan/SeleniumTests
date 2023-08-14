@@ -28,7 +28,7 @@ jobs:
       working-directory: ./src
       
   build-and-test-selenium:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -45,7 +45,7 @@ jobs:
       working-directory: ./tests/Functional
       
     - name: Wait for asp.net
-      run: sleep 120
+      run: sleep 60
       
     - name: Test
       run: dotnet test --configuration Release --no-build --no-restore
