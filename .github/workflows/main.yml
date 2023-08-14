@@ -27,9 +27,8 @@ jobs:
       working-directory: ./src
     
     - name: Run main solution ( windows )
-      run: start.cmd
+      run: Start-Process -FilePath start.cmd
       working-directory: ./.github/workflows
-      shell: cmd
       if: matrix.os == 'windows-latest'
 
     - name: Run main solution ( ubuntu )
